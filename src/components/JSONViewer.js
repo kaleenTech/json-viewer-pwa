@@ -1,7 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export default function JSONViewer() {
+  const router= useRouter()
   const [data, setData] = useState();
   const [formattedData, setFormattedData] = useState();
   const [copyLegend, setCopyLegend] = useState("Copy");
@@ -103,21 +105,21 @@ export default function JSONViewer() {
     }
   };
 
-  const copyData = () => {
-    if (formattedData || data) {
-      if (formattedData) {
-        navigator.clipboard.writeText(formattedData);
-      } else {
-        navigator.clipboard.writeText(data);
-      }
-      setCopyLegend("Copied!");
-      setCopyColor("bg-green-500 hover:bg-green-700");
-      setTimeout(() => {
-        setCopyLegend("Copy");
-        setCopyColor("bg-blue-500 hover:bg-blue-700");
-      }, 3000);
-    }
-  };
+  // const copyData = () => {
+  //   if (formattedData || data) {
+  //     if (formattedData) {
+  //       navigator.clipboard.writeText(formattedData);
+  //     } else {
+  //       navigator.clipboard.writeText(data);
+  //     }
+  //     setCopyLegend("Copied!");
+  //     setCopyColor("bg-green-500 hover:bg-green-700");
+  //     setTimeout(() => {
+  //       setCopyLegend("Copy");
+  //       setCopyColor("bg-blue-500 hover:bg-blue-700");
+  //     }, 3000);
+  //   }
+  // };
 
   const isJSON = (str) => {
     try {
@@ -138,34 +140,34 @@ export default function JSONViewer() {
                 JSON Viewer
               </div>
               <div className="flex flex-wrap justify-center gap-2 mt-4 mb-4">
-                <div class="button-borders" onClick={stringifyJSON}>
+                <div className="button-borders" onClick={stringifyJSON}>
                   <button
-                    class="primary-button"
+                    className="primary-button"
                     title="Convert JSON into plain string"
                   >
                     Stringify
                   </button>
                 </div>
 
-                <div class="button-borders" onClick={minifyJSON}>
+                <div className="button-borders" onClick={minifyJSON}>
                   <button
-                    class="primary-button"
+                    className="primary-button"
                     title="Minify the JSON - Remove all the whitespaces"
                   >
                     Minify
                   </button>
                 </div>
-                <div class="button-borders" onClick={beautifyJSON}>
+                <div className="button-borders" onClick={beautifyJSON}>
                   <button
-                    class="primary-button"
+                    className="primary-button"
                     title="Convert the JSON into readable format"
                   >
                     Beautify
                   </button>
                 </div>
-                <div class="button-borders" onClick={clearContent}>
+                <div className="button-borders" onClick={clearContent}>
                   <button
-                    class="primary-button"
+                    className="primary-button"
                     title="Convert the JSON into readable format"
                   >
                     Clear
@@ -183,9 +185,9 @@ export default function JSONViewer() {
                 >
                   {copyLegend}
                 </button> */}
-                <div class="button-borders" onClick={clearContent}>
+                <div className="button-borders" onClick={clearContent}>
                   <button
-                    class={`primary-button ${
+                    className={`primary-button ${
                       copyLegend === "Copied!"
                         ? "opacity-50 cursor-not-allowed"
                         : ""
@@ -194,6 +196,14 @@ export default function JSONViewer() {
                     disabled={copyLegend === "Copied!" ? true : ""}
                   >
                     {copyLegend}
+                  </button>
+                </div>
+                <div className="button-borders" onClick={()=>router.push("timer")}>
+                  <button
+                    className="primary-button"
+                    title="Convert the JSON into readable format"
+                  >
+                    Timer
                   </button>
                 </div>
               </div>

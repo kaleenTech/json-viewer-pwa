@@ -122,3 +122,257 @@ body {
   fill: #0E1822;
  }
  
+
+ body {
+  margin: 0;
+}
+.post-main {
+  width: 50%;
+  margin: auto;
+}
+.post-container {
+  border: 2px solid #e0e0e0;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  transition: transform 0.3s ease;
+}
+
+.post-container:hover {
+  transform: translateY(-5px);
+}
+
+.post-title {
+  font-size: 1.8em;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: "Merriweather", serif;
+}
+
+.post-body {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #4f4f4f;
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  color: #7f8c8d;
+}
+
+.post-id {
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+/* location */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  font-weight: bold;
+  min-width: 120px;
+}
+
+.value {
+  word-break: break-word;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+/* popup */
+.popup {
+  /* position: fixed; */
+  top: 0;
+  /* left: 0; */
+  width: 500px;
+  height: 150px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  z-index: 9999;
+}
+
+.popup.open {
+  display: block;
+}
+
+.popup-content {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.popup-content h2 {
+  font-weight: bold;
+}
+
+.danger-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  background-color: #ff3333;
+}
+/* Timer */
+.timer-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: none;
+  transition: border-color 0.3s;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.time-info {
+  background-color: #f1f3f5;
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.time-info div {
+  margin-bottom: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.break-time {
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.active-time {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 20px;
+}
+/* Button styles */
+.button {
+  background-color: #3498db; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #2980b9; /* Darker shade for hover effect */
+}
+
+.button:active {
+  transform: scale(0.98); /* Button press effect */
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Focus outline */
+}
